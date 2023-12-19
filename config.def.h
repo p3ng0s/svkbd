@@ -11,6 +11,29 @@ static const char *defaultfonts[] = {
 };
 static const char *defaultcolors[SchemeLast][2] = {
 	/*     fg         bg       */
+	[SchemeNorm] = { "#e2e2e2", "#302826" }, // normal keys
+	[SchemeNormShift] = { "#FF875F", "#302826" }, // normal key shift uper
+
+	[SchemeNormABC] = { "#ffffff", "#302826" }, // the text keys
+	[SchemeNormABCShift] = { "#FF875F", "#302826" }, // the text shift uper
+
+	[SchemePress] = { "#393939", "#FF875F" }, // when pressed
+	[SchemePressShift] = { "#393939", "#FF875F" }, // when pressed upper shift
+
+	[SchemeHighlight] = { "#393939", "#FF875F" }, // on hover
+	[SchemeHighlightShift] = { "#393939", "#FF875F" }, // on hover upper shift
+
+	[SchemeOverlay] = { "#ffffff", "#2b3313" }, // overlay theme
+	[SchemeOverlayShift] = { "#008ac0", "#2b3313" }, // overlay shift
+
+	[SchemeWindow] = { "#bbbbbb", "#393939" }, // good question | background kb
+};
+
+/*
+static const char theme_col_fg[] =  "#393939";
+static const char theme_col_bg[] =  "#FF875F";
+static const char theme_col_text[] = "#393939";
+
 	[SchemeNorm] = { "#bbbbbb", "#132a33" },
 	[SchemeNormShift] = { "#008ac0", "#132a33" },
 	[SchemeNormABC] = { "#ffffff", "#14313d" },
@@ -22,5 +45,4 @@ static const char *defaultcolors[SchemeLast][2] = {
 	[SchemeOverlay] = { "#ffffff", "#2b3313" },
 	[SchemeOverlayShift] = { "#008ac0", "#2b3313" },
 	[SchemeWindow] = { "#bbbbbb", "#132a33" },
-};
-
+*/
