@@ -145,7 +145,7 @@ Buttonmod buttonmods[] = {
 	{ XK_Alt_L, Button3 },
 };
 
-#define OVERLAYS 106
+#define OVERLAYS 171
 static Key overlay[OVERLAYS] = {
 	{ 0, 0, XK_q }, //Overlay for a
 	{ "1", 0, XK_1 },
@@ -156,7 +156,7 @@ static Key overlay[OVERLAYS] = {
 	{ 0, 0, XK_Cancel }, /* XK_Cancel signifies  overlay boundary */
 
 	{ 0, 0, XK_e }, //Overlay for e (first item after boundary defines the trigger)
-	{ "3", 0, XK_1 },
+	{ "3", 0, XK_3 },
 	{ "è", 0, XK_egrave },
 	{ "é", 0, XK_eacute },
 	{ "ê", 0, XK_ecircumflex },
@@ -169,30 +169,110 @@ static Key overlay[OVERLAYS] = {
 
 	{ 0, 0, XK_r }, //Overlay for r
 	{ "4", 0, XK_4 },
+	{ "ř", 0, XK_rcaron },
 	{ 0, 0, XK_Cancel }, /* XK_Cancel signifies  overlay boundary */
 
 	{ 0, 0, XK_t }, //Overlay for t
 	{ "5", 0, XK_5 },
+	{ "ț", 0, XK_tcedilla },
+	{ "ť", 0, XK_tcaron },
+	{ "þ", 0, XK_thorn },
 	{ 0, 0, XK_Cancel }, /* XK_Cancel signifies  overlay boundary */
 
 	{ 0, 0, XK_y }, //Overlay for y
 	{ "6", 0, XK_6 },
+	{ "ỳ", 0, XK_ygrave },
+	{ "ý", 0, XK_yacute },
+	{ "ŷ", 0, XK_ycircumflex },
+	{ "ÿ", 0, XK_ydiaeresis },
 	{ 0, 0, XK_Cancel }, /* XK_Cancel signifies  overlay boundary */
 
 	{ 0, 0, XK_u }, //Overlay for u
 	{ "7", 0, XK_7 },
+	{ "ù", 0, XK_ugrave },
+	{ "ú", 0, XK_uacute },
+	{ "û", 0, XK_ucircumflex },
+	{ "ü", 0, XK_udiaeresis },
+	{ "ų", 0, XK_uogonek },
+	{ "ū", 0, XK_umacron },
+	{ "ů", 0, XK_uring},
+	{ "ŭ", 0, XK_ubreve},
+	{ "ű", 0, XK_udoubleacute },
 	{ 0, 0, XK_Cancel }, /* XK_Cancel signifies  overlay boundary */
 
 	{ 0, 0, XK_i }, //Overlay for i
 	{ "8", 0, XK_8 },
+	{ "ì", 0, XK_igrave },
+	{ "í", 0, XK_iacute },
+	{ "î", 0, XK_icircumflex },
+	{ "ï", 0, XK_idiaeresis },
+	{ "į", 0, XK_iogonek },
+	{ "ī", 0, XK_imacron },
+	{ "ı", 0, XK_idotless },
 	{ 0, 0, XK_Cancel }, /* XK_Cancel signifies  overlay boundary */
 
 	{ 0, 0, XK_o }, //Overlay for o
 	{ "9", 0, XK_9 },
+	{ "ò", 0, XK_ograve },
+	{ "ó", 0, XK_oacute },
+	{ "ô", 0, XK_ocircumflex },
+	{ "ö", 0, XK_odiaeresis },
+	{ "ǫ", 0, XK_ogonek },
+	{ "õ", 0, XK_otilde },
+	{ "ō", 0, XK_omacron },
+	{ "ø", 0, XK_oslash },
+	{ "ő", 0, XK_odoubleacute },
+	{ "œ", 0, XK_oe },
 	{ 0, 0, XK_Cancel }, /* XK_Cancel signifies  overlay boundary */
 
 	{ 0, 0, XK_p }, //Overlay for q
 	{ "0", 0, XK_0 },
+	{ 0, 0, XK_Cancel }, /* XK_Cancel signifies  overlay boundary */
+
+	{ 0, 0, XK_a }, //Overlay for a
+	{ "à", 0, XK_agrave },
+	{ "á", 0, XK_aacute },
+	{ "â", 0, XK_acircumflex },
+	{ "ä", 0, XK_adiaeresis },
+	{ "ą", 0, XK_aogonek },
+	{ "ã", 0, XK_atilde },
+	{ "ā", 0, XK_amacron },
+	{ "ă", 0, XK_abreve },
+	{ "å", 0, XK_aring },
+	{ "æ", 0, XK_ae },
+	{ 0, 0, XK_Cancel }, /* XK_Cancel signifies  overlay boundary */
+
+	{ 0, 0, XK_s }, //New overlay
+	{ "ş", 0, XK_scedilla },
+	{ "ŝ", 0, XK_scircumflex },
+	{ "š", 0, XK_scaron },
+	{ "ś", 0, XK_sacute },
+	{ "ß", 0, XK_ssharp },
+	{ 0, 0, XK_Cancel }, /* XK_Cancel signifies  overlay boundary */
+
+	{ 0, 0, XK_c }, //New overlay
+	{ "ç", 0, XK_ccedilla },
+	{ "ĉ", 0, XK_ccircumflex },
+	{ "č", 0, XK_ccaron },
+	{ "ć", 0, XK_cacute },
+	{ 0, 0, XK_Cancel }, /* XK_Cancel signifies  overlay boundary */
+
+	{ 0, 0, XK_g }, //New overlay
+	{ "ĝ", 0, XK_gcircumflex },
+	{ "ğ", 0, XK_gbreve },
+	{ 0, 0, XK_Cancel }, /* XK_Cancel signifies  overlay boundary */
+
+	{ 0, 0, XK_h }, //New overlay
+	{ "ĥ", 0, XK_hcircumflex },
+	{ 0, 0, XK_Cancel }, /* XK_Cancel signifies  overlay boundary */
+
+	{ 0, 0, XK_j }, //New overlay
+	{ "ĵ", 0, XK_jcircumflex },
+	{ 0, 0, XK_Cancel }, /* XK_Cancel signifies  overlay boundary */
+
+	{ 0, 0, XK_l }, //New overlay
+	{ "ł", 0, XK_lstroke },
+	{ "ľ", 0, XK_lcaron },
 	{ 0, 0, XK_Cancel }, /* XK_Cancel signifies  overlay boundary */
 
 	{ "/?", 0, XK_slash }, //New overlay - punctuation overlay
