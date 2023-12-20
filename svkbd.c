@@ -118,6 +118,7 @@ static int simulateoutput = 1; /* simulate key presses for X */
 static int printoutput = 0; /* print key pressed to stdout */
 static char *name = "svkbd";
 static int debug = 0;
+int radius_keys = 0;
 static int numlayers = 0;
 static int numkeys = 0;
 
@@ -992,6 +993,7 @@ usage(char *argv0)
 	fprintf(stderr, "  -o         - Print to standard output\n");
 	fprintf(stderr, "  -l         - Comma separated list of layers to enable\n");
 	fprintf(stderr, "  -s         - Layer to select on program start\n");
+	fprintf(stderr, "  -r [int]   - Set the radius of the keyboard\n");
 	fprintf(stderr, "  -H [int]   - Height fraction, one key row takes 1/x of the screen height\n");
 	fprintf(stderr, "  -fn [font] - Set font (Xft, e.g: DejaVu Sans:bold:size=20)\n");
 	fprintf(stderr, "  -g         - Set the window position or size using the X geometry format\n");
@@ -1232,6 +1234,10 @@ main(int argc, char *argv[])
 			if (i >= argc - 1)
 				usage(argv[0]);
 			heightfactor = atoi(argv[++i]);
+		} else if (!strcmp(argv[i], "-r")) {
+			if (i >= argc - 1)
+				usage(argv[0]);
+			radius_keys = atoi(argv[++i]);
 		} else {
 			fprintf(stderr, "Invalid argument: %s\n", argv[i]);
 			usage(argv[0]);

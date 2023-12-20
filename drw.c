@@ -236,16 +236,34 @@ drw_setscheme(Drw *drw, Clr *scm)
 		drw->scheme = scm;
 }
 
+#define DEG2RAD(deg) ((deg) * 64) 
 void
 drw_rect(Drw *drw, int x, int y, unsigned int w, unsigned int h, int filled, int invert)
 {
+	int radius = radius_keys;
+
 	if (!drw || !drw->scheme)
 		return;
 	XSetForeground(drw->dpy, drw->gc, invert ? drw->scheme[ColBg].pixel : drw->scheme[ColFg].pixel);
-	if (filled)
-		XFillRectangle(drw->dpy, drw->drawable, drw->gc, x, y, w, h);
-	else
-		XDrawRectangle(drw->dpy, drw->drawable, drw->gc, x, y, w - 1, h - 1);
+	if (filled) {
+		XFillRectangle(drw->dpy, drw->drawable, drw->gc, x+radius, y, w - 2 * radius, h);
+		XFillRectangle(drw->dpy, drw->drawable, drw->gc, x, y + radius, w, h - 2 * radius);
+
+		XFillArc(drw->dpy, drw->drawable, drw->gc, x, y, 2 * radius, 2 * radius, DEG2RAD(180), -DEG2RAD(90));
+		XFillArc(drw->dpy, drw->drawable, drw->gc, x + w - 2 * radius, y, 2 * radius, 2 * radius, DEG2RAD(90), -DEG2RAD(90));
+		XFillArc(drw->dpy, drw->drawable, drw->gc, x, y + h - 2 * radius, 2 * radius, 2 * radius, -DEG2RAD(90), -DEG2RAD(90));
+		XFillArc(drw->dpy, drw->drawable, drw->gc, x + w - 2 * radius, y + h - 2 * radius, 2 * radius, 2 * radius, 0, -DEG2RAD(90));
+	} else {
+		XDrawRectangle(drw->dpy, drw->drawable, drw->gc, x+radius, y, w - 2 * radius, h);
+		XDrawRectangle(drw->dpy, drw->drawable, drw->gc, x, y + radius, w, h - 2 * radius);
+
+		XDrawArc(drw->dpy, drw->drawable, drw->gc, x, y, 2 * radius, 2 * radius, DEG2RAD(180), -DEG2RAD(90));
+		XDrawArc(drw->dpy, drw->drawable, drw->gc, x + w - 2 * radius, y, 2 * radius, 2 * radius, DEG2RAD(90), -DEG2RAD(90));
+		XDrawArc(drw->dpy, drw->drawable, drw->gc, x, y + h - 2 * radius, 2 * radius, 2 * radius, -DEG2RAD(90), -DEG2RAD(90));
+		XDrawArc(drw->dpy, drw->drawable, drw->gc, x + w - 2 * radius, y + h - 2 * radius, 2 * radius, 2 * radius, 0, -DEG2RAD(90));
+	}
+
+
 }
 
 int

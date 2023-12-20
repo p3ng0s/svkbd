@@ -4,6 +4,8 @@
 #define MIN(A, B)               ((A) < (B) ? (A) : (B))
 #define BETWEEN(X, A, B)        ((A) <= (X) && (X) <= (B))
 
+extern int radius_keys;
+
 void die(const char *fmt, ...);
 void *ecalloc(size_t nmemb, size_t size);
 char *estrdup(const char *s);
