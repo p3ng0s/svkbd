@@ -76,9 +76,9 @@ static Key keys_shortcuts[] = {
 	{ "⇥", "🔏", XK_l, 1, XK_Alt_L },
 	{ "[]=", 0, XK_t, 1, XK_Alt_L },
 	{ "g+1", "g=0", XK_equal, 1, XK_Alt_L },
-	{ "xme", 0, XK_equal, 1 },
+    { "xme", 0, XK_equal, 1 },
 	{ "mut", 0, XF86XK_AudioMute, 1 },
-	{ "rof", 0, XK_Super_L, 1 },
+	{ "X", "X", XK_q, 1 },
 	{ "prs", 0, XK_Print, 1 },
 	{ 0 }, /* New row */
 
